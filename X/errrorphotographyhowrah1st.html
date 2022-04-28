@@ -1,0 +1,349 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+/** star rating **/
+.checked {
+  color: orange;
+}
+.checkside
+{
+  padding-left: 970px;
+  padding-top: 80px;
+}
+/** icon bar **/
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  width: 90px;
+  background-color: #555;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+  background-color: #000;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/** background image **/
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231__340.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:contain;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/** about me **/
+div{
+  margin-bottom: 15px;
+  padding: 4px 12px;
+}
+.about{
+  background-color: black;
+  border-left: 6px solid whitesmoke;
+}
+/** card **/
+.card {
+  box-shadow: 0 4px 8px 0 whitesmoke;
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+/** gallery **/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+.sizephoto {
+  padding-left: 60px;
+}
+
+/** Contact **/
+.contact
+{
+  padding-left: 200px;
+}
+.contact a {
+  font-size: 36px;
+}
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: whitesmoke;
+}
+
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+</style>
+</head>
+<body>
+
+    <div class="sidenav">
+        <a class="active" href="#home"><i class="fa fa-home"></i></a> 
+        <a href="#about"><i class="fa fa-user"></i></a> 
+        <a href="#photos"><i class="fa fa-image"></i></a> 
+        <a href="#contact"><i class="fa fa-envelope"></i></a>
+       
+      </div>
+
+      <div class="main">
+        <div id="home">
+    <div class="hero-image">
+        <div class="hero-text">
+          <h1 style="font-size:50px">I am Mangaldeep Paul</h1>
+          <p>And I'm a Photographer</p>
+        </div>
+        <div class="checkside">
+          <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        </div>
+      </div>
+        </div>
+        
+
+
+<div id="about">
+<div class="about">
+  <p><strong><font face="Courier New" color="whitesmoke"> About Mangaldeep </font></strong><br><p> <font face="Courier New"size="3" color="whitesmoke">ome text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p></font></p></p>
+</div>
+
+
+<h2 style="text-align:center"><font face="Courier New" color="whitesmoke" size="4"> | About Camera | </font> </h2>
+
+<div class="card">
+  <img src="https://cdn.pixabay.com/photo/2014/08/29/14/53/camera-431119__340.jpg" alt="John" style="width:100%">
+  <h1><font face="Courier New" color="whitesmoke">DSLR</font></h1>
+  <p class="title">180 pxl lense</p>
+  <p><font face="Courier New" color="grey">abcdefgh</font></p>
+  <div style="margin: 24px 0;">
+    <span class="fa fa-camera checked"> = </span>
+    <span class="fa fa-inr checked"> 10 </span>
+  </div>
+  
+</div>
+</div>
+
+<!-- Photo Grid -->
+<div id="photos">
+  <br>
+<div class="sizephoto">
+  <font face="Courier New" color="whitesmoke">| My photos |</font>
+</div>
+<div class="row"> 
+  <div class="column">
+    <img src="https://media.istockphoto.com/photos/grinnell-glacier-trail-picture-id827422248?k=20&m=827422248&s=612x612&w=0&h=jV9xH98CxOEAT3AzEeKznxjln9F4TlMgS7kbeMH6DpA=" style="width:100%">
+    <img src="https://media.istockphoto.com/photos/wild-flowers-in-the-grass-on-a-background-of-mountains-picture-id613758084?k=20&m=613758084&s=612x612&w=0&h=_3RrVCMWzyjVbCUNxQb_-DdocCFM-4ErMQg8txu7Qu4=" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://media.istockphoto.com/photos/spring-hiking-picture-id506478832?k=20&m=506478832&s=612x612&w=0&h=PhPS21N3wpy_RV4ZDb08U4qt9DsFGV58rCqT1cG4zJ0=" style="width:100%">
+    <img src="https://media.istockphoto.com/photos/wild-flowers-in-the-grass-on-a-background-of-mountains-picture-id613758084?k=20&m=613758084&s=612x612&w=0&h=_3RrVCMWzyjVbCUNxQb_-DdocCFM-4ErMQg8txu7Qu4=" style="width:100%">
+  </div>  
+  <div class="column">
+    <img src="https://media.istockphoto.com/photos/grinnell-glacier-trail-picture-id827422248?k=20&m=827422248&s=612x612&w=0&h=jV9xH98CxOEAT3AzEeKznxjln9F4TlMgS7kbeMH6DpA=" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://media.istockphoto.com/photos/wild-flowers-in-the-grass-on-a-background-of-mountains-picture-id613758084?k=20&m=613758084&s=612x612&w=0&h=_3RrVCMWzyjVbCUNxQb_-DdocCFM-4ErMQg8txu7Qu4=" style="width:100%">
+  </div>
+</div>
+</div>
+</div>
+
+<div id="contact">
+  <div class="contact">
+  <font face="Courier New" color="whitesmoke" size="6"> | contact Me | </font>
+  <br>
+  <p> </p>
+  <a href="#"><span class="fa fa-map-marker checked"> <font face="Courier New" color="whitesmoke" size="6"> westbengal, Howrah </font> </span> </a> 
+  <br>
+  <p> </p>
+  <a href="#"><span class="fa fa-phone checked"> <font face="Courier New" color="whitesmoke" size="6"> <a href="tel:+919830092430"> 9830092430 </a> </font> </span> </a> 
+  <br>
+  <p> </p>
+  <a href="#"><span class="fa fa-envelope checked"> <font face="Courier New" color="whitesmoke" size="6"> <a href="mailto:mangaldeeppaul100@gmail.com"> mangaldeeppaul100@gmail.com </a> </font> </span> </a> 
+</div>
+</div>
+
+<button class="open-button" onclick="openForm()"><font face="Courier New" size="4"> Chat </font></button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <font face="Courier New" color="whitesmoke" size="6"> <b> chat </b> </font>
+<br>
+    <label for="msg"><b><font face="Courier New" color="whitesmoke" size="6"> Message </font></b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn"><font face="Courier New" size="6"> Send </font></button>
+    <button type="button" class="btn cancel" onclick="closeForm()"><font face="Courier New" size="6">Close</font></button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+
+</body>
+</html>
